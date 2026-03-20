@@ -1,0 +1,142 @@
+.nav {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-100);
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.navList::-webkit-scrollbar {
+  display: none;
+}
+
+.navLink {
+  display: block;
+  padding: 0 0.875rem;
+  height: var(--navbar-height);
+  line-height: var(--navbar-height);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-gray-700);
+  white-space: nowrap;
+  transition: color var(--transition), background var(--transition);
+  position: relative;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0.875rem;
+  right: 0.875rem;
+  height: 2px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition);
+  border-radius: var(--radius-full);
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+/* Clearance button */
+.clearanceBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+
+.clearanceBtn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-1px);
+}
+
+.clearanceIcon {
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.clearanceText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.clearanceTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.clearanceSub {
+  font-size: 0.65rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .navLink {
+    padding: 0 0.625rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+  .inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  .navList {
+    overflow-x: auto;
+  }
+  .navLink {
+    height: 36px;
+    line-height: 36px;
+    font-size: 0.8rem;
+    padding: 0 0.75rem;
+  }
+  .navLink::after {
+    display: none;
+  }
+  .clearanceBtn {
+    align-self: flex-start;
+    padding: 0.3rem 0.75rem;
+  }
+}

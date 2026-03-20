@@ -1,0 +1,128 @@
+.hero {
+  position: relative;
+  height: clamp(360px, 55vw, 560px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 30, 77, 0.82) 0%,
+    rgba(11, 30, 77, 0.55) 50%,
+    rgba(11, 30, 77, 0.15) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-bottom: clamp(2rem, 5vw, 4rem);
+}
+
+.contentInner {
+  max-width: 560px;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.18;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.01em;
+}
+
+.subtext {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 1.75rem;
+  font-weight: 400;
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6875rem 1.375rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+
+.ctaPrimary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+}
+
+.ctaPrimary:hover {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.ctaSecondary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  border: 2px solid var(--color-accent);
+}
+
+.ctaSecondary:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 640px) {
+  .hero {
+    align-items: center;
+  }
+  .overlay {
+    background: rgba(11, 30, 77, 0.70);
+  }
+  .contentInner {
+    max-width: 100%;
+  }
+  .headline br {
+    display: none;
+  }
+  .ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

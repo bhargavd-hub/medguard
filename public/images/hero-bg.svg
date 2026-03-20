@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1B3A7A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2D5FAA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4A8FCC;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="overlay" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0B1E4D;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#0B1E4D;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)" />
+  <rect width="1920" height="1080" fill="url(#overlay)" />
+  <!-- Decorative medical cross -->
+  <rect x="1400" y="200" width="20" height="200" rx="10" fill="rgba(255,255,255,0.08)" transform="translate(-10 -100)"/>
+  <rect x="1300" y="280" width="200" height="20" rx="10" fill="rgba(255,255,255,0.08)" transform="translate(-100 -10)"/>
+  <!-- Subtle circles -->
+  <circle cx="1600" cy="500" r="300" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="60"/>
+  <circle cx="1600" cy="500" r="200" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="40"/>
+  <circle cx="1600" cy="500" r="100" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="20"/>
+  <!-- Placeholder text -->
+  <text x="960" y="480" text-anchor="middle" font-family="Georgia, serif" font-size="48" fill="rgba(255,255,255,0.15)">Hero Background Image</text>
+  <text x="960" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="rgba(255,255,255,0.10)">Replace with: public/images/hero-bg.jpg</text>
+  <text x="960" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="rgba(255,255,255,0.08)">Recommended: 1920×1080px · JPEG · ~200KB</text>
+</svg>

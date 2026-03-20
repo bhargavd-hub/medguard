@@ -1,0 +1,100 @@
+.section {
+  padding: 2.5rem 0;
+  background: var(--color-white);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem 1.5rem;
+  align-items: center;
+}
+
+.brandCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  border: 1.5px solid var(--color-gray-100);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  cursor: default;
+}
+
+.brandCard:hover {
+  border-color: var(--color-gray-300);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.brandName {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* Variant styles */
+.diamond {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.circleIcon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+
+.script {
+  font-style: italic;
+  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 2rem 0;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+  .brandCard {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
