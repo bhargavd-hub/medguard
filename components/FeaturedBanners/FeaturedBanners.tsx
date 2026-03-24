@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './FeaturedBanners.module.css';
 
 const banners = [
@@ -9,7 +10,8 @@ const banners = [
     href: '/products/3m-coban-elastic-wrap',
     bg: '#D6EAF8',
     accentColor: '#1B3A7A',
-    emoji: '🩹',
+    image: 'https://placehold.co/220x160/1B3A7A/FFFFFF?text=3M+Coban+Wrap&font=open-sans',
+    imageAlt: '3M Coban Elastic Wrap product image',
   },
   {
     id: 'omron-bf511',
@@ -18,7 +20,8 @@ const banners = [
     href: '/products/omron-bf511',
     bg: '#FAE5D3',
     accentColor: '#A04000',
-    emoji: '⚖️',
+    image: 'https://placehold.co/220x160/A04000/FFFFFF?text=OMRON+BF511&font=open-sans',
+    imageAlt: 'Omron BF511 Body Composition Monitor product image',
   },
   {
     id: 'medguard-sheets',
@@ -27,7 +30,8 @@ const banners = [
     href: '/products/medguard-incontinence-sheets',
     bg: '#D5F5E3',
     accentColor: '#1D6A42',
-    emoji: '🛏️',
+    image: 'https://placehold.co/220x160/1D6A42/FFFFFF?text=Incontinence+Sheets&font=open-sans',
+    imageAlt: 'Medguard Incontinence Sheets product image',
   },
 ];
 
@@ -42,9 +46,16 @@ export default function FeaturedBanners() {
               className={styles.card}
               style={{ background: banner.bg }}
             >
-              {/* Illustration placeholder */}
-              <div className={styles.imageArea} aria-hidden="true">
-                <span className={styles.emoji}>{banner.emoji}</span>
+              {/* Product image */}
+              <div className={styles.imageArea}>
+                <Image
+                  src={banner.image}
+                  alt={banner.imageAlt}
+                  width={220}
+                  height={160}
+                  className={styles.productImage}
+                  unoptimized
+                />
               </div>
 
               {/* Text */}
